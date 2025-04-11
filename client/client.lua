@@ -31,30 +31,3 @@ RegisterNetEvent('sc_notify:notify')
 AddEventHandler('sc_notify:notify', function(data)
     notify(data)
 end)
-
-RegisterCommand("testnotify", function()
-    exports['sc_notify']:notify({
-        title = "Wichtige Ankündigung",
-        description = "Dies ist eine sehr lange Nachricht, die mehrere Zeilen umfasst.\nSie enthält sogar manuelle Zeilenumbrüche!",
-        type = "info",
-        position = "center-right",
-        Duration = 10000,
-        showDuration = false
-    })
-    
-    exports['sc_notify']:notify({
-        title = "Standard-Notify", 
-        description = "Das ist eine Standard-Info!",
-        type = "info"
-    })
-
-    exports['sc_notify']:notify({
-        title = "Custom-Notify", 
-        description = "Mit eigenem Icon & Position!",
-        icon = "rocket",
-        iconColor = "#FF00FF",
-        position = "top-right",
-        Duration = 15000,
-        showDuration = false
-    })
-end, false)
